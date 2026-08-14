@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Add Medicine | MediCare</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<header class="dashboard-nav">
+
+    <div class="logo">
+        💊 MediCare
+    </div>
+
+    <a href="{{ url_for('dashboard') }}"
+       class="logout-btn">
+        ← Dashboard
+    </a>
+
+</header>
+
+
+<main class="add-medicine-page">
+
+    <div class="form-card">
+
+        <span class="badge">
+            MEDICINE MANAGEMENT
+        </span>
+
+        <h1>
+            Add Medicine
+        </h1>
+
+        <p>
+            Enter the medicine information according to
+            your prescribed instructions.
+        </p>
+
+
+        {% with messages = get_flashed_messages() %}
+
+            {% if messages %}
+
+                <div class="message">
+
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+
+                </div>
+
+            {% endif %}
+
+        {% endwith %}
+
+
+        <form method="POST">
+
+            <label>
+                Medicine Name
+            </label>
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Example: Medicine A"
+                required
+            >
+
+
+            <label>
+                Prescribed Dose
+            </label>
+
+            <input
+                type="text"
+                name="dose"
+                placeholder="Example: 1 tablet"
+                required
+            >
+
+
+            <label>
+                Frequency
+            </label>
+
+            <select name="frequency" required>
+
+                <option value="">
+                    Select frequency
+                </option>
+
+                <option value="Once daily">
+                    Once daily
+                </option>
+
+                <option value="Twice daily">
+                    Twice daily
+                </option>
+
+                <option value="Three times daily">
+                    Three times daily
+                </option>
+
+                <option value="As prescribed">
+                    As prescribed
+                </option>
+
+            </select>
+
+
+            <div class="form-row">
+
+                <div>
+
+                    <label>
+                        Start Date
+                    </label>
+
+                    <input
+                        type="date"
+                        name="start_date"
+                        required
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        End Date
+                    </label>
+
+                    <input
+                        type="date"
+                        name="end_date"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <label>
+                Reminder Time
+            </label>
+
+            <input
+                type="time"
+                name="reminder_time"
+                required
+            >
+
+
+            <button
+                type="submit"
+                class="auth-btn">
+
+                Save Medicine
+
+            </button>
+
+        </form>
+
+    </div>
+
+</main>
+
+</body>
+
+</html>

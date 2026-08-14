@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medicine Reminder</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+
+        <div class="logo">
+            💊 MediCare
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="{{ url_for('login') }}" class="login-btn">
+    Login
+</a>
+
+    </header>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <span class="badge">
+                Smart Medicine Management
+            </span>
+
+            <h1>
+                Never Miss Your
+                <span>Medicine</span>
+                Again.
+            </h1>
+
+            <p>
+                Manage your medicine schedule, set reminders,
+                and organize your prescribed dosage information
+                in one simple and convenient place.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="{{ url_for('register') }}" class="primary-btn">
+    Get Started →
+</a>
+
+                <button class="secondary-btn">
+                    Explore Features
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Dashboard Preview -->
+        <div class="dashboard-card">
+
+            <div class="card-header">
+                <div>
+                    <small>Today's Medicines</small>
+                    <h2>04</h2>
+                </div>
+
+                <div class="pill-icon">
+                    💊
+                </div>
+            </div>
+
+
+            <div class="medicine-item">
+
+                <div class="medicine-icon">
+                    💊
+                </div>
+
+                <div>
+                    <strong>Medicine Reminder</strong>
+                    <small>08:00 AM</small>
+                </div>
+
+                <span class="status">
+                    Upcoming
+                </span>
+
+            </div>
+
+
+            <div class="medicine-item">
+
+                <div class="medicine-icon">
+                    💙
+                </div>
+
+                <div>
+                    <strong>Daily Medicine</strong>
+                    <small>01:00 PM</small>
+                </div>
+
+                <span class="status done">
+                    Scheduled
+                </span>
+
+            </div>
+
+
+            <div class="progress-box">
+
+                <div class="progress-title">
+                    <span>Today's Progress</span>
+                    <strong>75%</strong>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Features -->
+    <section id="features" class="features">
+
+        <div class="section-title">
+
+            <span>FEATURES</span>
+
+            <h2>
+                Everything You Need
+            </h2>
+
+            <p>
+                Simple tools to help you organize your medicine schedule.
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <div class="feature-icon">⏰</div>
+
+                <h3>Smart Reminders</h3>
+
+                <p>
+                    Set medicine reminders and keep track of
+                    your scheduled doses.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="feature-icon">🧮</div>
+
+                <h3>Dosage Calculator</h3>
+
+                <p>
+                    Calculate prescribed dose schedules
+                    using the information entered by the user.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+
+                <h3>Health Dashboard</h3>
+
+                <p>
+                    View your upcoming medicines and
+                    daily progress from one dashboard.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="feature-icon">📋</div>
+
+                <h3>Medicine History</h3>
+
+                <p>
+                    Keep an organized record of your
+                    medicine schedule and status.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section id="about" class="about">
+
+        <div>
+
+            <span class="badge">
+                ABOUT THE PROJECT
+            </span>
+
+            <h2>
+                Simple. Organized. Reliable.
+            </h2>
+
+            <p>
+                Medicine Reminder is a web application designed
+                to help users organize their medicine schedules
+                and reminders in one place.
+            </p>
+
+            <p>
+                The application is built using Python Flask,
+                HTML, CSS and JavaScript.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="contact">
+
+        <h3>💊 MediCare</h3>
+
+        <p>
+            Smart Medicine Reminder & Management System
+        </p>
+
+        <p class="copyright">
+            © 2026 MediCare. Educational Project.
+        </p>
+
+    </footer>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

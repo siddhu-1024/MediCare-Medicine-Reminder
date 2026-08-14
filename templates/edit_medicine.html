@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Medicine | MediCare</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="form-page">
+
+
+    <div class="form-card">
+
+
+        <div class="form-icon">
+            💊
+        </div>
+
+
+        <h1>
+            Edit Medicine
+        </h1>
+
+
+        <p>
+            Update your medicine details
+        </p>
+
+
+
+        <form
+            method="POST"
+            action="{{ url_for('edit_medicine', medicine_id=medicine['id']) }}">
+
+
+            <label>
+                Medicine Name
+            </label>
+
+            <input
+                type="text"
+                name="name"
+                value="{{ medicine['name'] }}"
+                required>
+
+
+
+            <label>
+                Dose
+            </label>
+
+            <input
+                type="text"
+                name="dose"
+                value="{{ medicine['dose'] }}"
+                required>
+
+
+
+            <label>
+                Frequency
+            </label>
+
+            <select
+                name="frequency"
+                required>
+
+
+                <option
+                    value="Once daily"
+                    {% if medicine['frequency'] == 'Once daily' %}selected{% endif %}>
+
+                    Once daily
+
+                </option>
+
+
+                <option
+                    value="Twice daily"
+                    {% if medicine['frequency'] == 'Twice daily' %}selected{% endif %}>
+
+                    Twice daily
+
+                </option>
+
+
+                <option
+                    value="Three times daily"
+                    {% if medicine['frequency'] == 'Three times daily' %}selected{% endif %}>
+
+                    Three times daily
+
+                </option>
+
+
+                <option
+                    value="As needed"
+                    {% if medicine['frequency'] == 'As needed' %}selected{% endif %}>
+
+                    As needed
+
+                </option>
+
+
+            </select>
+
+
+
+            <label>
+                Start Date
+            </label>
+
+            <input
+                type="date"
+                name="start_date"
+                value="{{ medicine['start_date'] }}"
+                required>
+
+
+
+            <label>
+                End Date
+            </label>
+
+            <input
+                type="date"
+                name="end_date"
+                value="{{ medicine['end_date'] }}"
+                required>
+
+
+
+            <label>
+                Reminder Time
+            </label>
+
+            <input
+                type="time"
+                name="reminder_time"
+                value="{{ medicine['reminder_time'] }}"
+                required>
+
+
+
+            <button
+                type="submit"
+                class="primary-btn">
+
+                💾 Save Changes
+
+            </button>
+
+
+            <a
+                href="{{ url_for('dashboard') }}"
+                class="cancel-btn">
+
+                Cancel
+
+            </a>
+
+
+        </form>
+
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>
